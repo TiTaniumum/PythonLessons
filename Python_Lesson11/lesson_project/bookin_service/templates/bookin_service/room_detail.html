@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}ALL Rooms{% endblock %}
+{% block content %}
+<div>
+    <div>
+        <h2>{{room.name}}</h2>
+        <p>Описание: {{room.description}}</p>
+        <p>Цена: {{room.price}}</p>
+        <p>Катеогрия: {{room.category_id.name}}</p>
+        <h3>Удобства: </h3>
+        <div>
+            {% for amenity in room.amenities.all %}
+            <p>{{ amenity.name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<a href="{% url 'room_list' %}">Назад к списку</a>
+{% endblock %}
