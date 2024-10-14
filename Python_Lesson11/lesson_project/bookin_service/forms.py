@@ -14,3 +14,6 @@ class RoomForm(forms.ModelForm):
         if len(name) < 5:
             raise forms.ValidationError("Название комнаты должно содуржать не менее пяти символов")
         return name
+
+class ConfirmDeleteForm(forms.Form):
+    confirm = forms.BooleanField(required=True, label="Вы уверены, что хотите удалить комнату?")
