@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Registratin{% endblock %}
+
+{% block content %}
+<div>
+    <form action="POST">
+        {% csrf_token %}
+        {{ form.as_p }} 
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+{% endblock %}
