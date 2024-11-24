@@ -1,0 +1,1 @@
+print({"fullname": "kasjdfk", "height": 123})
